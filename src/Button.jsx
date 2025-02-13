@@ -1,5 +1,6 @@
 
-function print() {
+function print(event) {
+     console.log(event)
      console.log("you clicked me")
 }
 

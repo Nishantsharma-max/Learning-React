@@ -3,6 +3,7 @@ import Producttab from "./Producttab.jsx"
 import Hello from "./Hello.jsx"
 import Mainbox from "./Mainbox.jsx";
 import Button from "./Button.jsx";
+import Counter from "./Counter.jsx";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Producttab/>
       <Mainbox/>
       <Button/>
+      <Counter/>
     </>);
 }
 
