@@ -1,0 +1,15 @@
+*{
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+}
+
+.Product{
+     border: 2px solid black;
+     border-radius: 20px;
+     margin-bottom: 10px;
+     padding: 10px;
+}
+.Product h3{
+     padding-bottom: 5px;
+}
