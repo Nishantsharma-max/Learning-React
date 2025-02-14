@@ -1,11 +1,16 @@
-import { useState } from "react"
-
-
+import { useState } from "react";
 export default function Counter(){
-     let [count ,setcount] = useState(0)
-
+     const [count,setcount]=useState(0)
      function countHandeler(){
-          setcount(count+1)
+          setcount((el)=>{
+               return el+1
+          })
+          setcount((el)=>{
+               return el+1
+          })
      }
-     return<button onClick={countHandeler} >count:{count}</button>
+     return <button onClick={countHandeler} >count:{count}</button>
 }
+
+
+
