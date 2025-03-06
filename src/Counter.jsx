@@ -5,9 +5,6 @@ export default function Counter(){
           setcount((el)=>{
                return el+1
           })
-          setcount((el)=>{
-               return el+1
-          })
      }
      return <button onClick={countHandeler} >count:{count}</button>
 }

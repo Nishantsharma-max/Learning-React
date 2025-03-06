@@ -6,6 +6,7 @@ import Button from "./Button.jsx";
 import Counter from "./Counter.jsx";
 import Gamebox from "./Gamebox.jsx";
 import Likebtn from "./Likebtn.jsx";
+import Todo from "./todo.jsx";
 function App() {
   
   return (
@@ -13,10 +14,11 @@ function App() {
       {/* <Hello  Name="Nishant Sharma" textColor="#035875" />
       <Producttab/>
       <Mainbox/>
-      <Button/>
-      <Counter  /> */}
-      <Gamebox/>
+      <Button/> */}
+      {/* <Counter  /> */}
+      {/* <Gamebox/> */}
       {/* <Likebtn/> */}
+      <Todo/>
 
     </>);
 }
