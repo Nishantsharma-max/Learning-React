@@ -1,16 +1,17 @@
 import { useState } from "react"
 import {v4 as uuidv4} from 'uuid'
 export default function Todo(){
-     let [todo,settodo]=useState([{task:"sample task", id: uuidv4()}])
+     let [todo,settodo]=useState([{task:"sample task", id: uuidv4(),styles:{textDecorationLine:""}}])
     let [newtodo,setnewtodo]=useState("")
-    let [styles,setstyles]=useState({})
+ 
+ 
 
     let resetnewtodo = (event) => {
      setnewtodo(event.target.value)
     }
 
     let addtask=()=>{
-          settodo([...todo,{task:newtodo,id:uuidv4()}])
+          settodo([...todo,{task:newtodo,id:uuidv4(),styles:{textDecorationLine:""}}])
           setnewtodo("")
     }
     let handledelete=(id)=>{
@@ -18,13 +19,6 @@ export default function Todo(){
           return todo.id != id
      })
      settodo([...copy])
-          // for(let el of todo){
-     //      if (el.id==event.target.id){
-     //          todo.splice(todo.indexOf(el),1)
-     //          settodo([...todo])
-     //      }
-     // settodo((prev)=>{prev.filter((prev)=> prev.id!=id)})
-          
      }
 
      let uppercase=()=>{
@@ -40,25 +34,40 @@ export default function Todo(){
           ))
      }
 
-    
+     let handlecrossbtn=()=>{
+          settodo((todo)=>{return todo.map((el)=>{return {...el,styles:{...el.styles,textDecorationLine:"line-through"}}})})
+     }
 
+    let handleonecrossbtn=(id)=>{
+     settodo((pretodo)=>pretodo.map((el)=>{
+          if (el.id==id){
+               return {...el,styles:{...el.styles,textDecorationLine:"line-through"}}
+          }else return {...el}
+     }))
+    }
+
+    
+  
      return(
-     <div style={{width:"400px"}}>
+     <div style={{width:"300px"}}>
           <h3>TODO LIST</h3><br />
           <input type="text" placeholder="Add Task..." value={newtodo} onChange={resetnewtodo} />
           <button onClick={addtask} >add task</button><br /><hr /><br />
           <ul>
                {
                     todo.map((todo)=>{
-                         return <>
-                         <li style={styles}  key={todo.id}>{todo.task}</li>
+                         return <div style={{display:"flex",justifyContent:"space-between"}}>
+                         <li style={todo.styles}   key={todo.id}>{todo.task}</li>
+                         <button onClick={()=>handleonecrossbtn(todo.id)}>Mark done</button>
                          <button onClick={()=>handledelete(todo.id)} style={{backgroundColor:"red"}} >Delete</button>
                          <button onClick={()=>uppercaseone(todo.id)}>upperCaseone</button>
-                         </>
+                         </div>
                     })
                }
-          </ul>
+          </ul><br/>
           <button onClick={uppercase}>upperCase</button>
+          <button onClick={handlecrossbtn}>Mark all as done</button>
+          
      </div>
      );
 }
