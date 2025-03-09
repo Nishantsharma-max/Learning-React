@@ -7,6 +7,7 @@ import Counter from "./Counter.jsx";
 import Gamebox from "./Gamebox.jsx";
 import Likebtn from "./Likebtn.jsx";
 import Todo from "./todo.jsx";
+import Lottary from "./lottarygame.jsx";
 function App() {
   
   return (
@@ -18,7 +19,8 @@ function App() {
       {/* <Counter  /> */}
       {/* <Gamebox/> */}
       {/* <Likebtn/> */}
-      <Todo/>
+      {/* <Todo/> */}
+      <Lottary/>
 
     </>);
 }
