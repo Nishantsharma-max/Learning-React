@@ -8,6 +8,8 @@ import Gamebox from "./Gamebox.jsx";
 import Likebtn from "./Likebtn.jsx";
 import Todo from "./todo.jsx";
 import Lottary from "./lottarygame.jsx";
+import Form from "./Form.jsx";
+import Commentform from "./Commentform.jsx";
 function App() {
   
   return (
@@ -20,7 +22,9 @@ function App() {
       {/* <Gamebox/> */}
       {/* <Likebtn/> */}
       {/* <Todo/> */}
-      <Lottary/>
+      {/* <Lottary/> */}
+      {/* <Form/> */}
+      <Commentform/>
 
     </>);
 }
