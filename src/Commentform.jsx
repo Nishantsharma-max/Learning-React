@@ -1,6 +1,5 @@
 import { useState } from "react"
-
-export default function Commentform(){
+export default function Commentform({addnewcomment}){
      let [formdata,setformdata]=useState({username:"",remark:"",rating:5})
 
      let handleinput=(event)=>{
@@ -9,11 +8,22 @@ export default function Commentform(){
 
           })
      }
+     let handlebutton=(event)=>{
+          event.preventDefault()
+          addnewcomment(formdata)
+          setformdata({
+               username:"",
+               remark:"",
+               rating:5
+          })
+     }
+   
+
 
      return (
      <div>
           <h1>Give a comment!</h1>
-          <form action="#">
+          <form>
                <input type="text" 
                onChange={handleinput}
                placeholder="username"
@@ -33,7 +43,7 @@ export default function Commentform(){
                min={1}
                name="rating"/>
                <br /><br />
-               <button>Add comment</button>
+               <button onChange={handlebutton} >Add comment</button>
           </form>
      </div>
      )
